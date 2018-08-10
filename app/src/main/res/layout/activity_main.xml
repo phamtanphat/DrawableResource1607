@@ -14,9 +14,18 @@
         android:layout_width="50dp"
         android:layout_height="50dp" />
     <ImageView
+        android:scaleType="fitXY"
         android:src="@drawable/custom_image_clip"
         android:id="@+id/imageviewClip"
+        android:layout_toRightOf="@id/buttonShapeDrawable"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+    <Button
+        android:elevation="20dp"
+        android:background="@drawable/custom_button_statelist"
+        android:text="State list"
         android:layout_centerInParent="true"
-        android:layout_width="match_parent"
-        android:layout_height="200dp" />
+        android:id="@+id/buttonStatelist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </RelativeLayout>
