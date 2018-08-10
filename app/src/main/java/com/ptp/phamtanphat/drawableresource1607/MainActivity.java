@@ -1,6 +1,7 @@
 package com.ptp.phamtanphat.drawableresource1607;
 
 import android.graphics.drawable.ClipDrawable;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -22,7 +23,18 @@ public class MainActivity extends AppCompatActivity {
         img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                clipDrawable.setLevel(clipDrawable.getLevel() + 100);
+                final Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (clipDrawable.getLevel() >= 10000){
+                            img.setImageLevel(1000);
+                        }
+                        clipDrawable.setLevel(clipDrawable.getLevel() + 1000);
+                        handler.postDelayed(this,1000);
+                    }
+                },1000);
+
             }
         });
     }
